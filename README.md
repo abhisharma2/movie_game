@@ -1,3 +1,3 @@
-## A Movie Game Betting Gamh
+## A Movie Betting Game
 
 ### Built With AngularJS & The Rotten Tomato API
