@@ -11,6 +11,7 @@ angular.module('movieGameApp')
       })
       .success(function (data) {
           $scope.toy_story_3 = data;
+          $scope.ty_score = data.ratings.critics_score;
       });
 
       $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies/13602.json', {
@@ -21,6 +22,7 @@ angular.module('movieGameApp')
       })
       .success(function (data) {
           $scope.judge_dredd = data;
+          $scope.jd_score = data.ratings.critics_score;
       })
 
       $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies/12161.json', {
@@ -31,6 +33,7 @@ angular.module('movieGameApp')
       })
       .success(function (data) {
           $scope.the_abyss = data;
+          $scope.a_score = data.ratings.critics_score;
       });
 
       $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies/10223.json', {
@@ -41,6 +44,7 @@ angular.module('movieGameApp')
       })
       .success(function (data) {
           $scope.spaceballs = data;
+          $scope.sb_score = data.ratings.critics_score;
       });
 
       $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies/12911.json', {
@@ -51,6 +55,7 @@ angular.module('movieGameApp')
       })
       .success(function (data) {
           $scope.godfather = data;
+          $scope.gf_score = data.ratings.critics_score;
       });
 
       // var toy_story_3_score = toy_story_3.ratings.critics_score;

@@ -27,36 +27,36 @@
     <div class="row">
       <div class="large-12">
         <div ng-controller="movieController as movie" class="question-container">
-          <form>
+          <form class="form" ng-submit="" novalidate>
             <div class="score-container">
               <h2 class="score-header">{{toy_story_3.title}}:
-                <span class="hidden">{{toy_story_3.ratings.critics_score}}</span>
+                <span class="hidden">{{ty_score}}</span>
               </h2>
-              <label>Score:<input></input></label>
+              <label>Score:<input type="number"></input></label>
             </div>
             <div class="score-container">
               <h2 class="score-header">{{judge_dredd.title}}:
-                <span class="hidden">{{judge_dredd.ratings.critics_score}}</span>
+                <span class="hidden">{{jd_score}}</span>
               </h2>
-              <label>Score:<input></input></label>
+              <label>Score:<input type="number"></input></label>
             </div>
             <div class="score-container">
               <h2 class="score-header">{{the_abyss.title}}:
-                <span class="hidden">{{the_abyss.ratings.critics_score}}</span>
+                <span class="hidden">{{a_score}}</span>
               </h2>
-              <label>Score:<input></input></label>
+              <label>Score:<input type="number"></input></label>
             </div>
             <div class="score-container">
               <h2 class="score-header">{{spaceballs.title}}:
-                <span class="hidden">{{spaceballs.ratings.critics_score}}</span>
+                <span class="hidden">{{sb_score}}</span>
               </h2>
-              <label>Score:<input></input></label>
+              <label>Score:<input type="number"></input></label>
             </div>
             <div class="score-container">
               <h2 class="score-header">{{godfather.title}}:
-                <span class="hidden">{{godfather.ratings.critics_score}}</span>
+                <span class="hidden">{{gf_score}}</span>
               </h2>
-              <label>Score:<input></input></label>
+              <label>Score:<input type="number"></input></label>
             </div>
             <div class="score-form">
               <button class="button">Submit</button>

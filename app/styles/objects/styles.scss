@@ -1,6 +1,8 @@
 $black: #524623;
 $yellow: #F7C138;
 $dark-yellow: #E4AA0E;
+$red: #BB1911;
+$green: #3BA10F;
 
 html,body {
   background-color: $yellow;
@@ -51,6 +53,10 @@ a {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-top: 50px;
+  font-family: 'Cabin', sans-serif;
+  &:focus {
+    outline: none;
+  }
 }
 
 .button:hover {
@@ -82,8 +88,18 @@ a {
     font-family: 'Cabin', sans-serif;
     margin-left: 10px;
     color: white;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    display: inline-block;
+    padding: 0px;
     &:focus {
       outline: none;
+      background-color: transparent;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+      box-shadow: none;
+      padding: 0px;
     }
   }
 }
@@ -101,6 +117,10 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.footer-text {
+  align-self: flex-end;
 }
 
 .social {
