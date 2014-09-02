@@ -12,6 +12,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -19,17 +20,51 @@
     <div class="row">
       <div class="large-12 container">
         <h1>Can You Be A Movie Critic?</h1>
-        <p>How well do you agree with the critics on movies.</p>
+        <p>Rank the movies below from 0-100. See how you stack up against movie critics.</p>
+        <p>(Critic scores taken from Rotten Tomatoes)</p>
       </div>
     </div>
     <div class="row">
       <div class="large-12">
-        <div ng-controller="movieController as store" class="question-container">
-          <div ng-repeat="movie in store.movies">
-            <h2>Movie: {{movie.title}}</h2>
-          </div>
+        <div ng-controller="movieController as movie" class="question-container">
+          <form>
+            <div class="score-container">
+              <h2 class="score-header">{{toy_story_3.title}}:</h2>
+              <label>Rate The Movie<input></input></label>
+            </div>
+            <div class="score-container">
+              <h2 class="score-header">{{judge_dredd.title}}:</h2>
+              <label>Rate The Movie<input></input></label>
+            </div>
+            <div class="score-container">
+              <h2 class="score-header">{{the_abyss.title}}:</h2>
+              <label>Rate The Movie<input></input></label>
+            </div>
+            <div class="score-container">
+              <h2 class="score-header">{{spaceballs.title}}:</h2>
+              <label>Rate The Movie<input></input></label>
+            </div>
+            <div class="score-container">
+              <h2 class="score-header">{{godfather.title}}:</h2>
+              <label>Rate The Movie<input></input></label>
+            </div>
+            <div class="score-form">
+              <button class="button">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
+    </div>
+    <div class="footer">
+      <p class="footer-text">Built by <a href="http://abhiously.com" target="_blank">Abhiously</a> on top of AngularJS & Yeoman</p>
+      <ul class="social">
+        <li>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </li>
+      </uL>
     </div>
 
 

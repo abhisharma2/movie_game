@@ -12,6 +12,14 @@ html,body {
   justify-content: center;
 }
 
+a {
+  color: $dark-yellow;
+  &:hover {
+    color: darken($dark-yellow, 10%);
+  }
+}
+
+
 .container {
   display: flex;
   align-items: center;
@@ -43,28 +51,65 @@ html,body {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-top: 50px;
-  color: $black;
 }
 
 .button:hover {
-  color: $black;
   background-color: #D8A10E;
 }
 
-.minimal {
-  input {
-    border-radius: 0px;
-    background: inherit;
-    border: none;
-    border-bottom: 1px solid white;
-    width: 12rem;
-    border-right: 1rem;
-    margin: 1rem;
-    color: $black;
+.score-container {
+  display: flex;
+  align-items: center;
+  .score-header {
     font-size: 24px;
+    font-family: 'Cabin', sans-serif;
+    padding-right: 10px;
+    margin: 0px !important;
+    width: 300px;
+  }
+  label {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: initial;
+    padding: 10px;
+  }
+  input {
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid black;
+    font-size: 24px;
+    width: 150px;
+    font-family: 'Cabin', sans-serif;
+    margin-left: 10px;
     &:focus {
       outline: none;
     }
   }
 }
 
+.score-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.social {
+  list-style-type: none;
+  margin-right: 50px;
+  li {
+    display: inline-block;
+    margin: 0px 20px;
+  }
+  i {
+    font-size: 32px;
+  }
+}
