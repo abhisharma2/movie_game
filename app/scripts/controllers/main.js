@@ -57,10 +57,9 @@ angular.module('movieGameApp')
           $scope.godfather = data;
           $scope.gf_score = data.ratings.critics_score;
       });
+  });
 
-      // var toy_story_3_score = toy_story_3.ratings.critics_score;
-      // var judge_dredd_score = judge_dredd.ratings.critics_score;
-      // var the_abyss_score = the_abyss.ratings.critics_score;
-      // var spaceballs_score = spaceballs.ratings.critics_score;
-      // var godfather_score = godfather.ratings.critics_score;
+angular.module('movieGameApp')
+  .controller('formController', function () {
+    //nothing so far
   });
