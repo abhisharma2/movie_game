@@ -29,23 +29,33 @@
         <div ng-controller="movieController as movie" class="question-container">
           <form>
             <div class="score-container">
-              <h2 class="score-header">{{toy_story_3.title}}:</h2>
+              <h2 class="score-header">{{toy_story_3.title}}:
+                <span class="hidden">{{toy_story_3.ratings.critics_score}}</span>
+              </h2>
               <label>Score:<input></input></label>
             </div>
             <div class="score-container">
-              <h2 class="score-header">{{judge_dredd.title}}:</h2>
+              <h2 class="score-header">{{judge_dredd.title}}:
+                <span class="hidden">{{judge_dredd.ratings.critics_score}}</span>
+              </h2>
               <label>Score:<input></input></label>
             </div>
             <div class="score-container">
-              <h2 class="score-header">{{the_abyss.title}}:</h2>
+              <h2 class="score-header">{{the_abyss.title}}:
+                <span class="hidden">{{the_abyss.ratings.critics_score}}</span>
+              </h2>
               <label>Score:<input></input></label>
             </div>
             <div class="score-container">
-              <h2 class="score-header">{{spaceballs.title}}:</h2>
+              <h2 class="score-header">{{spaceballs.title}}:
+                <span class="hidden">{{spaceballs.ratings.critics_score}}</span>
+              </h2>
               <label>Score:<input></input></label>
             </div>
             <div class="score-container">
-              <h2 class="score-header">{{godfather.title}}:</h2>
+              <h2 class="score-header">{{godfather.title}}:
+                <span class="hidden">{{godfather.ratings.critics_score}}</span>
+              </h2>
               <label>Score:<input></input></label>
             </div>
             <div class="score-form">
