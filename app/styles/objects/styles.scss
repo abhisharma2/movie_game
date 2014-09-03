@@ -109,6 +109,41 @@ a {
   align-items: center;
   justify-content: center;
 }
+.submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.input-button {
+  background-color: darken($dark-yellow, 20%);
+  width: 100px;
+  border: none;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 10px 16px;
+  transition: .5s all linear;
+  -webkit-transition: .5s all linear;
+  -moz-transition: .5s all linear;
+  color: white;
+  &:hover {
+    background-color: darken($dark-yellow, 30%);
+    color: white;
+  }
+  &:focus {
+    outline: none;
+    background-color: darken($dark-yellow, 30%);
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    padding: 10px 16px;
+  }
+}
+
+//Footer stuff
+
 
 .footer {
   position: fixed;

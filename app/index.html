@@ -26,40 +26,17 @@
     </div>
     <div class="row">
       <div class="large-12">
-        <div ng-controller="movieController as movie" class="question-container">
-          <form class="form" ng-contoller="formController as form" ng-submit="" novalidate>
-            <div class="score-container">
-              <h2 class="score-header">{{toy_story_3.title}}:
-                <span class="hidden">{{ty_score}}</span>
+        <div ng-controller="movieController as movieCtrl" class="question-container" >
+          <form class="form" ng-contoller="gameController as game" ng-submit="game.addScore(player_score)" novalidate>
+            <div class="score-container" >
+              <h2 style="margin-right: 10px; font-size: 1.6875rem;">{{movieCtrl.movies[0].id}}: </h2>
+              <h2 class="score-header">{{movieCtrl.movies[0].title}}
+                <!-- <span class="hidden">{{movieCtrl.movies[0].ratings.critics_score}}</span> -->
               </h2>
-              <label>Score:<input type="number"></input></label>
+              <label>Score:<input ng-model="movieCtrl.ratings.player_score" type="number"></input></label>
             </div>
-            <div class="score-container">
-              <h2 class="score-header">{{judge_dredd.title}}:
-                <span class="hidden">{{jd_score}}</span>
-              </h2>
-              <label>Score:<input type="number"></input></label>
-            </div>
-            <div class="score-container">
-              <h2 class="score-header">{{the_abyss.title}}:
-                <span class="hidden">{{a_score}}</span>
-              </h2>
-              <label>Score:<input type="number"></input></label>
-            </div>
-            <div class="score-container">
-              <h2 class="score-header">{{spaceballs.title}}:
-                <span class="hidden">{{sb_score}}</span>
-              </h2>
-              <label>Score:<input type="number"></input></label>
-            </div>
-            <div class="score-container">
-              <h2 class="score-header">{{godfather.title}}:
-                <span class="hidden">{{gf_score}}</span>
-              </h2>
-              <label>Score:<input type="number"></input></label>
-            </div>
-            <div class="score-form">
-              <button class="button">Submit</button>
+            <div class="submit-container">
+              <input type="submit" value="Next" class="input-button" />
             </div>
           </form>
         </div>
@@ -109,9 +86,9 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+      <script src="scripts/app.js"></script>
+      <script src="scripts/controllers/main.js"></script>
+      <!-- endbuild -->
 </body>
 </html>
