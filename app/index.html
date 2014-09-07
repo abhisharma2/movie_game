@@ -30,15 +30,25 @@
           <form name="gameForm" class="form" ng-submit="game.addScore(player_score) && game.calculateActualScore(actual_score)"  novalidate>
             <div class="score-container" >
               <h2 style="margin-right: 10px; font-size: 1.6875rem;">{{movie.id}}: </h2>
-              <h2 class="score-header">{{movie.title}}
-                <span>{{movie.ratings.critics_score - movie.ratings.player_score}}</span>
-              </h2>
-              <label>Score:<input ng-model="movie.ratings.player_score" type="number" min="0" max="100"></input></label>
+              <h2 class="score-header">{{movie.title}} | {{movie.year}}</h2>
+              <label>Your Score:<input ng-model="movie.ratings.player_score" type="number" min="1" max="100"></input></label>
               <p class="invalid" ng-show="!gameForm.$valid">Invalid!</p>
             </div>
-          </form>
+            <div class="show-score" ng-show="gameForm.$valid">
+              <div class="scores" ng-show="show_score > 0">
+                <p> Critics Score: <span class="critic-score">{{movie.ratings.critics_score}}</span></p>
+                <p> Off By:
+                  <span class="actual-score" ng-bind="movie.ratings.actual_score">{{Math.abs(movie.ratings.critics_score - movie.ratings.player_score)}}</span>
+                  <span class="good-score" ng-show="movie.ratings.actual_score < 10"> Wow, nice job! </span>
+                  <span class="avg-score" ng-show="movie.ratings.actual_score > 10 && movie.ratings.actual_score < 25"> Kinda close. I assume you like Adam Sandler movies. </span>
+                  <span class="bad-score" ng-show="movie.ratings.actual_score > 25"> Are you high? </span>
+                </p>
+              </div>
+              <button  ng-click="show_score = show_score+1" value="Check">Check</button>
+            </div>
+          </form
           <div class="submit-container">
-            <button value="Next" class="button" ng-click="movieCtrl.current_movie = movieCtrl.current_movie + 1">Next</button>
+            <button value="Next" class="button" ng-click="movieCtrl.current_movie = movieCtrl.current_movie + 1">Next Movie</button>
           </div>
         </div>
       </div>

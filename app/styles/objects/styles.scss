@@ -113,7 +113,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .input-button {
@@ -182,3 +181,35 @@ a {
   font-family: 'Cabin';
   font-size: 28px;
 }
+
+.show-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  button {
+    color: rgb(49, 155, 49);
+    font-family: 'Cabin';
+    text-decoration: underline;
+    margin: 0px;
+    &:hover, &:focus {
+      background-color: transparent;
+      outline: none;
+    }
+  }
+}
+
+.good-score {
+  margin-left: 5px;
+  color: green;
+}
+
+.bad-score {
+  @extend .good-score;
+  color: rgb(241, 64, 64);
+}
+.avg-score {
+  @extend .good-score;
+  color: black;
+}
+
