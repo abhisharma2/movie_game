@@ -24,26 +24,25 @@
         <p>(Critic scores taken from Rotten Tomatoes)</p>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12">
-        <div ng-controller="movieController as movieCtrl" class="question-container" >
-          <form class="form" ng-contoller="gameController as game" ng-submit="game.addScore(player_score)" novalidate>
+    <div class="row" ng-controller="movieController as movieCtrl" >
+      <div class="large-12" ng-repeat="movie in movieCtrl.movies" >
+        <div class="question-container" ng-contoller="gameController as game" ng-show="movie.id === movieCtrl.current_movie">
+          <form class="form" ng-submit="game.addScore(player_score)"  novalidate>
             <div class="score-container" >
-              <h2 style="margin-right: 10px; font-size: 1.6875rem;">{{movieCtrl.movies[0].id}}: </h2>
-              <h2 class="score-header">{{movieCtrl.movies[0].title}}
-                <!-- <span class="hidden">{{movieCtrl.movies[0].ratings.critics_score}}</span> -->
+              <h2 style="margin-right: 10px; font-size: 1.6875rem;">{{movie.id}}: </h2>
+              <h2 class="score-header">{{movie.title}}
               </h2>
-              <label>Score:<input ng-model="movieCtrl.ratings.player_score" type="number"></input></label>
-            </div>
-            <div class="submit-container">
-              <input type="submit" value="Next" class="input-button" />
+              <label>Score:<input ng-model="movie.ratings.player_score" type="number"></input></label>
             </div>
           </form>
+          <div class="submit-container">
+            <button value="Next" class="button" ng-click="movieCtrl.current_movie = movieCtrl.current_movie + 1">Next</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="footer">
-      <p class="footer-text">Built by <a href="http://abhiously.com" target="_blank">Abhiously</a> on top of AngularJS & Yeoman</p>
+      <p class="footer-text">Built by <a href="http://abhiously.com" target="_blank">Abhiously</a> on top of AngularJS &amp; Yeoman</p>
       <ul class="social">
         <li>
           <a href="#"><i class="fa fa-twitter"></i></a>
