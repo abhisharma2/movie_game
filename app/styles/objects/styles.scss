@@ -199,9 +199,9 @@ a {
   }
 }
 
-.good-score {
+.good-score, .perfect-score {
   margin-left: 5px;
-  color: green;
+  color: $green;
 }
 
 .bad-score {

@@ -27,24 +27,27 @@
     <div class="row" ng-controller="movieController as movieCtrl" >
       <div class="large-12" ng-repeat="movie in movieCtrl.movies" >
         <div class="question-container" ng-contoller="gameController as game" ng-show="movie.id === movieCtrl.current_movie">
-          <form name="gameForm" class="form" ng-submit="game.addScore(player_score) && game.calculateActualScore(actual_score)"  novalidate>
+          <form name="gameForm" class="form" ng-submit="game.addScore(player_score);game.actualScore(actual_score)"  novalidate>
             <div class="score-container" >
               <h2 style="margin-right: 10px; font-size: 1.6875rem;">{{movie.id}}: </h2>
               <h2 class="score-header">{{movie.title}} | {{movie.year}}</h2>
               <label>Your Score:<input ng-model="movie.ratings.player_score" type="number" min="1" max="100"></input></label>
+              <input type="hidden" ng-model="movie.actual_score" ng-value="{{Math.abs(movie.ratings.critics_score - movie.ratings.player_score)}}"></input>
               <p class="invalid" ng-show="!gameForm.$valid">Invalid!</p>
             </div>
             <div class="show-score" ng-show="gameForm.$valid">
               <div class="scores" ng-show="show_score > 0">
                 <p> Critics Score: <span class="critic-score">{{movie.ratings.critics_score}}</span></p>
+                <p> Player Score: <span class="critic-score">{{movie.ratings.player_score}}</span></p>
                 <p> Off By:
-                  <span class="actual-score" ng-bind="movie.ratings.actual_score">{{Math.abs(movie.ratings.critics_score - movie.ratings.player_score)}}</span>
-                  <span class="good-score" ng-show="movie.ratings.actual_score < 10"> Wow, nice job! </span>
-                  <span class="avg-score" ng-show="movie.ratings.actual_score > 10 && movie.ratings.actual_score < 25"> Kinda close. I assume you like Adam Sandler movies. </span>
-                  <span class="bad-score" ng-show="movie.ratings.actual_score > 25"> Are you high? </span>
+                  <span class="actual-score">{{movie.actual_score}}</span>
+                  <!-- <span class="perfect-score" ng-show="score.actual_score === 0"> Is this Roger Ebert? </span> -->
+                  <!-- <span class="good-score" ng-show="score.actual_score < 10"> Wow, nice job! </span> -->
+                  <!-- <span class="avg-score" ng-show="movie.ratings.actual_score > 10 && movie.ratings.actual_score < 25"> Kinda close. I assume you like Adam Sandler movies. </span> -->
+                  <!-- <span class="bad-score" ng-show="movie.ratings.actual_score > 25"> Are you high? </span> -->
                 </p>
               </div>
-              <button  ng-click="show_score = show_score+1" value="Check">Check</button>
+              <button  ng-click="show_score = show_score+1; actual-value" value="Check">Check</button>
             </div>
           </form
           <div class="submit-container">
@@ -60,10 +63,12 @@
       <p class="footer-text">Built by <a href="http://abhiously.com" target="_blank">Abhiously</a> on top of AngularJS &amp; Yeoman</p>
       <ul class="social">
         <li>
-          <a href="#"><i class="fa fa-twitter"></i></a>
+          <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+          <a href="https://twitter.com/share" data-lang="en"><i class="fa fa-twitter"></i></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </li>
         <li>
-          <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/plugins/share_button.php?app_id=113869198637480&channel=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FZEbdHPQfV3x.js%3Fversion%3D41%23cb%3Df1d75da0c%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff7c540e14%26relation%3Dparent.parent&href=http%3A%2F%2Flocalhost%3A9000%2F&locale=en_US&sdk=joey&width=10"><i class="fa fa-facebook"></i></a>
         </li>
       </uL>
     </div>
