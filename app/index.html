@@ -27,24 +27,22 @@
     <div class="row" ng-controller="movieController as movieCtrl" >
       <div class="large-12" ng-repeat="movie in movieCtrl.movies" >
         <div class="question-container" ng-contoller="gameController as game" ng-show="movie.id === movieCtrl.current_movie">
-          <form name="gameForm" class="form" ng-submit="game.addScore(player_score);game.actualScore(actual_score)"  novalidate>
+          <form name="gameForm" class="form" novalidate>
             <div class="score-container" >
               <h2 style="margin-right: 10px; font-size: 1.6875rem;">{{movie.id}}: </h2>
               <h2 class="score-header">{{movie.title}} | {{movie.year}}</h2>
               <label>Your Score:<input ng-model="movie.ratings.player_score" type="number" min="1" max="100"></input></label>
-              <input type="hidden" ng-model="movie.actual_score" ng-value="{{Math.abs(movie.ratings.critics_score - movie.ratings.player_score)}}"></input>
               <p class="invalid" ng-show="!gameForm.$valid">Invalid!</p>
             </div>
             <div class="show-score" ng-show="gameForm.$valid">
               <div class="scores" ng-show="show_score > 0">
                 <p> Critics Score: <span class="critic-score">{{movie.ratings.critics_score}}</span></p>
-                <p> Player Score: <span class="critic-score">{{movie.ratings.player_score}}</span></p>
                 <p> Off By:
-                  <span class="actual-score">{{movie.actual_score}}</span>
-                  <!-- <span class="perfect-score" ng-show="score.actual_score === 0"> Is this Roger Ebert? </span> -->
-                  <!-- <span class="good-score" ng-show="score.actual_score < 10"> Wow, nice job! </span> -->
-                  <!-- <span class="avg-score" ng-show="movie.ratings.actual_score > 10 && movie.ratings.actual_score < 25"> Kinda close. I assume you like Adam Sandler movies. </span> -->
-                  <!-- <span class="bad-score" ng-show="movie.ratings.actual_score > 25"> Are you high? </span> -->
+                  <span class="actual-score">{{Math.abs(movie.ratings.critics_score - movie.ratings.player_score)}}</span>
+                  <span class="perfect-score" ng-if="(movie.ratings.critics_score - movie.ratings.player_score) === 0"> Is this Roger Ebert? </span>
+                  <span class="good-score" ng-if="Math.abs(movie.ratings.critics_score - movie.ratings.player_score) < 10"> Wow, nice job! </span>
+                  <span class="avg-score" ng-if="Math.abs(movie.ratings.critics_score - movie.ratings.player_score) < 25 && Math.abs(movie.ratings.critics_score - movie.ratings.player_score) > 10"> Meh. I'm assuming you enjoy Adam Sandler movies. </span>
+                  <span class="bad-score" ng-if="Math.abs(movie.ratings.critics_score - movie.ratings.player_score) > 25"> Are you high? </span>
                 </p>
               </div>
               <button  ng-click="show_score = show_score+1; actual-value" value="Check">Check</button>
