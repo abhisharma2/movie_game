@@ -397,10 +397,10 @@ module.exports = function (grunt) {
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
     },
     heroku: {
-        options: {
-            remote: 'git@heroku.com:silverscreen-scores.git',
-            branch: 'master'
-        }
+      options: {
+        // remote: 'git@heroku.com:silverscreen-scores.git',
+        branch: 'master'
+      }
     }
    }
 
@@ -459,4 +459,4 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('deploy', ['buildcontrol']);
-  };
+};
