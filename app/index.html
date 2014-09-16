@@ -7,16 +7,17 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body ng-app="movieGameApp">
+  <div id="fb-root"></div>
     <div class="row">
       <div class="large-12 container">
         <h1>Can You Be A Movie Critic?</h1>
@@ -52,25 +53,44 @@
             <button value="Next" class="button" ng-click="movieCtrl.current_movie = movieCtrl.current_movie + 1">Next Movie</button>
           </div>
         </div>
-      </div>
-      <div ng-show="movieCtrl.current_movie > 19">
-        <h1 class="end-message">Thanks for playing! Share the game w/ friends if you liked it :) </h1>
+        <div ng-show="movieCtrl.current_movie > 19">
+          <h1 class="end-message">Thanks for playing! Share the game w/ friends if you liked it :) </h1>
+        </div>
       </div>
     </div>
     <div class="footer">
       <p class="footer-text">Built by <a href="http://abhiously.com" target="_blank">Abhiously</a> on top of AngularJS &amp; Yeoman</p>
       <ul class="social">
         <li>
-          <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-          <a href="https://twitter.com/share" data-lang="en"><i class="fa fa-twitter"></i></a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <a href="https://twitter.com/share" data-url="http://silverscreen-critic.com" data-text="Can you be a movie critic? Try now:" data-via="mabhster" data-hashtags="silverscreencritic" data-lang="en"><i class="fa fa-twitter"></i></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </li>
         <li>
-        <a href="https://www.facebook.com/plugins/share_button.php?app_id=113869198637480&channel=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FZEbdHPQfV3x.js%3Fversion%3D41%23cb%3Df1d75da0c%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff7c540e14%26relation%3Dparent.parent&href=http%3A%2F%2Flocalhost%3A9000%2F&locale=en_US&sdk=joey&width=10"><i class="fa fa-facebook"></i></a>
+          <div style="color:#E4AA0E;cursor:pointer;" data-href="https://developers.facebook.com/docs/plugins/" data-width="32px"><i class="fa fa-facebook"></i></div>
         </li>
       </uL>
     </div>
 
+
+    <script>
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=312171105635658&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54840929-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 
 
     <!-- build:js(.) scripts/oldieshim.js -->
@@ -80,7 +100,7 @@
     <![endif]-->
     <!-- endbuild -->
 
-    <!-- build:js(.) scripts/vendor.js -->
+    <!-- build:js(./) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>

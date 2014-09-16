@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('movieGameApp')
   .controller('movieController', function ($scope) {
     this.movies = data;
